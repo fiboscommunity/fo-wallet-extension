@@ -1,0 +1,83 @@
+.font_size_14 {
+    font-size: 14px;
+}
+
+@nav_height: 44px;
+
+.navbar {
+    .flex_row;
+    flex           : 1;
+    height         : @nav_height;
+    background     : #FFFFFF;
+    align-items    : center;
+    padding        : 0 10px;
+    justify-content: space-between;
+    box-shadow     : 0 1px 3px rgba(26, 26, 26, .1);
+    position: relative;
+
+    .fonticon {
+        .font_size_14;
+        font-weight: bold;
+        color      : #333333;
+    }
+
+    .back_icon {
+        width : 30px;
+        height: 30px;
+    }
+
+    .back {
+        width : 30px;
+        height: 40px;
+        cursor: pointer;
+        .flex_row;
+        align-items    : center;
+        justify-content: flex-start;
+    }
+
+    .back_text {
+        .font_size_14;
+        cursor      : pointer;
+        color       : #333333;
+        margin-right: 10px;
+    }
+
+    .right {
+        width : 30px;
+        height: 40px;
+        cursor: pointer;
+        .flex_row;
+        align-items    : center;
+        justify-content: flex-end;
+        margin-left: 10px;
+    }
+
+    .right_text {
+        .font_size_14;
+        cursor     : pointer;
+        color      : #333333;
+        margin-left: 10px;
+        text-align : right;
+    }
+
+    .title {
+        font-size    : 17px;
+        color        : #333333;
+        flex         : 1;
+        display      : inline-block;
+        white-space  : nowrap;
+        overflow     : hidden;
+        text-overflow: ellipsis;
+        text-align   : center;
+    }
+
+    .menu_icon {
+        .flex_row;
+        justify-content: center;
+        align-items    : flex-end;
+    }
+
+    .main_title {
+        margin-left: 60px;
+    }
+}

@@ -1,0 +1,396 @@
+body,
+div {
+    margin : 0;
+    padding: 0;
+}
+
+body {
+    margin        : 0;
+    padding       : 0;
+    margin-right  : 0px;
+    background    : #FFFFFF;
+    line-height   : 1.5;
+    font-size     : 16px;
+    flex-direction: column;
+    display       : flex;
+    font-family   : -apple-system, SF UI Display, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+}
+
+.scroll::-webkit-scrollbar {
+    width : 4px;
+    height: 4px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background-color: #DDDDDD;
+    border-radius   : 2px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background-color: #C8C8C8;
+    border-radius   : 2px;
+}
+
+@nav_height: 44px;
+@blue      : #318EFC;
+@gray      : #F9F9F9;
+
+.flex_column {
+    display       : flex;
+    flex-direction: column;
+}
+
+.flex_row {
+    display: flex;
+}
+
+.transition {
+    transition: all ease .3s;
+}
+
+#prompt_master {
+    .flex_column;
+    flex   : 1;
+    padding: 0 28px;
+
+    .title {
+        padding      : 18px 0;
+        font-size    : 20px;
+        color        : #333333;
+        border-bottom: 1px solid #CCCCCC;
+        color        : #333333;
+    }
+
+    .no_account {
+        .flex_column;
+        align-items: center;
+    }
+
+    .no_accout_title {
+        font-size : 20px;
+        margin-top: 50px;
+        color     : #333333;
+    }
+
+    .no_account_desc {
+        font-size : 16px;
+        margin-top: 15px;
+        color     : #999999;
+    }
+
+    .btn {
+        .transition;
+        font-size: 11px;
+        color    : #666666;
+        .flex_row;
+        justify-content: center;
+        align-items    : center;
+        padding        : 6px 11px;
+        border-radius  : 4px;
+        border         : 1px solid #CCCCCC;
+        cursor         : pointer;
+        min-width      : 50px;
+    }
+
+    .btn:hover {
+        border          : 1px solid @blue;
+        background-color: @blue;
+        color           : #FFFFFF;
+    }
+
+    .cancel_btn {
+        margin-top: 50px;
+    }
+
+    .accounts {
+        .flex_column;
+
+        .header {
+            .flex_row;
+            margin-top     : 8px;
+            justify-content: space-between;
+            align-items    : center;
+            border-bottom  : 1px solid #CCCCCC;
+            padding-bottom : 8px;
+
+            .account_item {
+                .flex_row;
+                background-color: @gray;
+                align-items     : center;
+                justify-content : space-between;
+                border-radius   : 4px;
+
+                .account_name {
+                    font-size    : 14px;
+                    color        : #666666;
+                    margin-left  : 10px;
+                    margin-bottom: 10px;
+                    margin-top   : 10px;
+                }
+
+                .account_arrow_mask {
+                    .flex_column;
+                    justify-content: center;
+                    align-items    : center;
+                    height         : @nav_height;
+                    width          : @nav_height;
+                    cursor         : pointer;
+                }
+
+                .account_arrow_mask:hover>.account_arrow {
+                    transform: rotate(180deg);
+                }
+
+                .account_arrow {
+                    .transition;
+                    width : 10px;
+                    height: 6px;
+                }
+            }
+
+            .operate {
+                .flex_row;
+
+                .accept {
+                    margin-left: 15px;
+                }
+            }
+
+        }
+
+        .base {
+            color     : #999999;
+            font-size : 16px;
+            text-align: center;
+        }
+
+        .account_title {
+            .base;
+            margin-top: 70px;
+        }
+
+        .account_desc {
+            .base;
+        }
+    }
+
+    .acount_locked_desc {
+        margin-top: 0;
+    }
+
+    .sign_header {
+        .flex_column;
+        margin-top: 15px;
+        font-size : 15px;
+        color     : #666666;
+    }
+
+    .sign_header_base {
+        .flex_row;
+        justify-content: space-between;
+    }
+
+    .sign_header_top {
+        .sign_header_base;
+
+        .actions {
+            height    : 22px;
+            overflow-y: auto;
+
+            .preview {
+                .flex_row;
+                align-items: center;
+
+                .arrow {
+                    margin: 0 8px;
+                    height: 16px;
+                    width : auto;
+                }
+            }
+        }
+    }
+
+    .sign_header_bottom {
+        .sign_header_base;
+        margin-top: 2px;
+    }
+
+    .signature_body {
+        border    : 1px dashed #D8D8D8;
+        margin-top: 8px;
+
+        .tab {
+            .flex_row;
+            align-items    : center;
+            justify-content: flex-start;
+            position       : relative;
+            height         : 40px;
+            border-bottom  : 1px solid #D8D8D8;
+
+            .tag_base {
+                color     : #666666;
+                font-size : 15px;
+                width     : 80px;
+                cursor    : pointer;
+                text-align: center;
+            }
+
+            .tag_select {
+                .tag_base;
+                font-weight: 800;
+            }
+
+            .line {
+                .transition;
+                width           : 80px;
+                height          : 2px;
+                border-radius   : 1px;
+                position        : absolute;
+                bottom          : -1px;
+                left            : 0;
+                background-color: @blue;
+            }
+        }
+
+        .content {
+            height    : calc(100vh - 235px);
+            overflow-y: auto;
+
+            .signature_content {
+                font-size: 14px;
+                color    : #999999;
+                margin   : 10px;
+
+                .signature_group {
+                    border-bottom : 1px solid #DCDCDC;
+                    padding-bottom: 10px;
+                    margin-bottom : 10px;
+
+                    .signature_row {
+                        font-size: 14px;
+                        color    : #666666;
+                        .flex_row;
+                        line-height: 24px;
+
+                        .signature_key {
+                            width   : 140px;
+                            position: relative;
+                        }
+
+                        .group_key {
+                            .signature_key;
+                        }
+
+                        .group_key::before {
+                            position        : absolute;
+                            width           : 4px;
+                            background-color: #DCDCDC;
+                            height          : 15px;
+                            top             : 29px;
+                            left            : 0;
+                            z-index         : 2;
+                            content         : '';
+                            border-radius   : 2px;
+                        }
+
+                        .signature_value {
+                            margin-left: 15px;
+                        }
+
+                        .signature_next {
+                            padding-left: 25px;
+                        }
+                    }
+
+                    .signature_return {
+                        .flex_column;
+                    }
+                }
+
+                .signature_group:last-child {
+                    padding-bottom: 0;
+                    border-bottom : none;
+                    margin-bottom : 0;
+                }
+            }
+        }
+    }
+
+    .signature_footer {
+        .flex_row;
+        align-items: center;
+        margin-top : 10px;
+
+        .checkbox {
+            .flex_row;
+            align-items: center;
+            flex       : 1;
+            cursor     : pointer;
+
+            .check_box {
+                width           : 18px;
+                height          : 18px;
+                background-color: transparent;
+            }
+
+            .tips {
+                font-size  : 14px;
+                color      : #666666;
+                margin-left: 10px;
+            }
+        }
+
+        .accept {
+            margin-left: 10px;
+        }
+    }
+
+    .attribute {
+        .flex_row;
+        padding-top    : 20px;
+        justify-content: space-between;
+        font-size      : 14px;
+
+        .attribute_data {
+            height: calc(100vh - 177px);
+            overflow-y: auto;
+            border       : 1px solid #DEDEDE;
+            color        : #999999;
+            padding      : 20px;
+            word-wrap    : break-word;
+            border-radius: 5px;
+            flex         : 1;
+        }
+
+        .attribute_accounts {
+            margin-left: 20px;
+            height: calc(100vh - 147px);
+            overflow-y: auto;
+
+            .attribute_item {
+                .transition;
+                width        : 200px;
+                line-height  : 40px;
+                padding      : 0 15px;
+                border-radius: 4px;
+                cursor       : pointer;
+                margin-bottom: 15px;
+                border       : 1px solid #DEDEDE;
+                color        : #333333;
+            }
+
+            .attribute_item:hover {
+                border          : 1px solid @blue;
+                background-color: @blue;
+                color           : #FFFFFF;
+            }
+
+            .attribute_item_selected {
+                .attribute_item;
+                background-color: @blue;
+                border          : 1px solid @blue;
+                color           : #FFFFFF;
+            }
+        }
+    }
+}
